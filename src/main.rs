@@ -31,7 +31,8 @@ fn so_action(obj : impl my_mod::MyTrait) {
 }
 
 
-fn test_dyn(obj : &dyn my_mod::MyTrait) {
+#[allow(dead_code)]
+fn test_dyn(_obj : &dyn my_mod::MyTrait) {
 
 }
 mod my_mod {
@@ -59,6 +60,7 @@ mod my_mod {
         MyPrivateType{}
     }
 
+    #[allow(dead_code)]
     pub fn create_obj_2(b: bool) -> Box<dyn MyTrait> {
         if b {
             return Box::new(MyPrivateType{});
