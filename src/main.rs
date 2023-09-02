@@ -35,6 +35,7 @@ fn so_action(obj : impl my_mod::MyTrait) {
 fn test_dyn(_obj : &dyn my_mod::MyTrait) {
 
 }
+
 mod my_mod {
     pub trait MyTrait {
         fn do_stuff(&self) -> u32;
